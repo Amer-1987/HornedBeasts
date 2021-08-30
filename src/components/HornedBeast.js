@@ -27,7 +27,7 @@ render() {
                     <Card.Body>
                         <Card.Title>{this.props.title} </Card.Title>
                         <Card.Text>
-                        vote 👍 : {this.state.vote}
+                        vote 💜 : {this.state.vote}
                         
                         </Card.Text>
                         <Button variant="primary">Go somewhere</Button>
