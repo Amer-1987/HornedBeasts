@@ -1,13 +1,38 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 class HornedBeast extends React.Component {
-    render() {
+constructor(props){
+ super(props);
+ this.state={
+    vote : 0
+ }  
+}
+
+votingProcess = () => {
+    console.log('hi');
+
+    this.setState({
+        vote : this.state.vote + 1
+    })
+}
+render() {
+
         return (
             <>
-               <h2>{this.props.title} </h2>
-               <p>{this.props.description} </p>
-               <img src={this.props.imageUrl} alt="" />
-
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={this.props.imageUrl} onClick={this.votingProcess} />
+                    <Card.Body>
+                        <Card.Title>{this.props.title} </Card.Title>
+                        <Card.Text>
+                        vote 👍 : {this.state.vote}
+                        
+                        </Card.Text>
+                        <Button variant="primary">Go somewhere</Button>
+                    </Card.Body>
+                </Card>
             </>
         )
     }
