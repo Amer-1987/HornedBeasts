@@ -42,6 +42,10 @@ class HornedBeast extends React.Component {
                                <p> vote 💜 : {this.state.vote}</p> 
                                <p> {this.props.description} </p>
                             </Card.Text>
+                            <Card.Text>
+                               <p> horns 🦄 : {this.props.horns}</p> 
+                               
+                            </Card.Text>
                             <Button variant="primary" onClick={this.props.update}> Showing Details</Button>
                         </Card.Body>
                     </Card>

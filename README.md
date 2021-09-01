@@ -108,3 +108,21 @@ Feature 3: *Bootstrap*
 `Finish time`: 5.10
 
 `Actual time needed to complete`: 1 hour
+........................................
+
+# Lab 03  
+
+` Number and name of feature:`   
+
+Feature #1: *Display a Modal*
+
+
+`Estimate of time needed to complete`: 3 hours
+
+`Start time`: 12.00 pm
+
+`Finish time`: 9.45
+
+`Actual time needed to complete`: 9 hour
+.................................
+
