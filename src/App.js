@@ -51,9 +51,9 @@ class app extends React.Component {
       <>
         <Header />
 
-
+  
         <Main
-          data={data}
+          data={this.state.hornsData}
           update={this.update}
           updatingFilterData={this.updatingFilterData}
         />

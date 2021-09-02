@@ -4,19 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 // import SelectedBeast from "./SelectedBeast ";
 import Form from "react-bootstrap/Form"
+import allData from './data.json'
 
 class Main extends React.Component {
 
     filtring = (e) => {
 
-        let horns= parseInt(e.target.value)
-            console.log(horns);
-        let newHornsArr = this.props.data.filter(item => item.horns === horns);
+        let horns = parseInt(e.target.value)
+        console.log(horns);
+        let newHornsArr = allData.filter(item => item.horns === horns);
         this.props.updatingFilterData(newHornsArr);
-      
+
         console.log(this.props);
         console.log(newHornsArr);
-return (newHornsArr)
+        return (newHornsArr)
 
     }
 
@@ -28,7 +29,9 @@ return (newHornsArr)
                 <Form>
                     <Form.Label>How many Horns?</Form.Label>
 
-                    <Form.Control as='select' onChange={this.filtring} aria-label="Default select example">
+                    <Form.Control as='select'
+                        onChange={this.filtring}
+                        aria-label="Default select example">
                         <option>Open this select menu</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -37,9 +40,7 @@ return (newHornsArr)
 
                     </Form.Control>
 
-                    {/* <Button variant="primary" type="submit">
-                    Submit
-                </Button> */}
+                  
                     <br />
                     <br />
 
@@ -62,12 +63,7 @@ return (newHornsArr)
                                         update={this.props.update}
 
                                     />
-                                    {/* <SelectedBeast
-
-                                        title={item.title}
-                                        imageUrl={item.image_url}
-                                        description={item.description} */}
-                                    {/* /> */}
+                                
                                 </>
                             )
 
@@ -75,9 +71,6 @@ return (newHornsArr)
                     }
                 </Row>
             </>
-
-
-
         )
     }
 }
