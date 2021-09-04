@@ -19,6 +19,8 @@ class HornedBeast extends React.Component {
         this.setState({
             vote: this.state.vote + 1
         })
+
+        
     }
 
     largerRender= () => {

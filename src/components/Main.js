@@ -9,11 +9,21 @@ import allData from './data.json'
 class Main extends React.Component {
 
     filtring = (e) => {
+       let newHornsArr;
+       if (e.target.value === 'all'){
 
-        let horns = parseInt(e.target.value)
+        newHornsArr= allData;
+        this.props.updatingFilterData(newHornsArr);
+
+       }else {
+        let horns = parseInt(e.target.value);
         console.log(horns);
         let newHornsArr = allData.filter(item => item.horns === horns);
         this.props.updatingFilterData(newHornsArr);
+         
+       }
+
+         
 
         console.log(this.props);
         console.log(newHornsArr);
@@ -29,10 +39,12 @@ class Main extends React.Component {
                 <Form>
                     <Form.Label>How many Horns?</Form.Label>
 
-                    <Form.Control as='select'
+                    <Form.Control as='select' 
                         onChange={this.filtring}
                         aria-label="Default select example">
                         <option>Open this select menu</option>
+                        <option value="all">all</option>
+
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -59,6 +71,8 @@ class Main extends React.Component {
                                         imageUrl={item.image_url}
                                         description={item.description}
                                         horns={item.horns}
+
+                                        
 
                                         update={this.props.update}
 
