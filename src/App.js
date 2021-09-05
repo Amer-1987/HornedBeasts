@@ -8,7 +8,6 @@ import data from "./components/data.json";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
 class app extends React.Component {
 
 
@@ -16,9 +15,13 @@ class app extends React.Component {
     super(props);
     this.state = {
       view: false,
+
       title:'',
       imageUrl:'',
       description:'',
+
+      hornsData: data,
+
     }
   }
 
@@ -39,6 +42,7 @@ class app extends React.Component {
       view: true,
     })
 
+
   }
 
   closing = () => {
@@ -47,23 +51,45 @@ class app extends React.Component {
     })
   }
 
+  updatingFilterData = (filteredData) => {
+    this.setState({
+      hornsData: filteredData,
+
+    })
+
+  }
+
+
+
+
+
   render() {
     return (
       <>
         <Header />
+
+  
         <Main
-          data={data}
+          data={this.state.hornsData}
           update={this.update}
+
           showData={this.showData}
+
+          updatingFilterData={this.updatingFilterData}
+
         />
         <Footer />
 
         <SelectedBeast
           sendView={this.state.view}
           closing={this.closing}
+
           title={this.state.title}
           imageUrl={this.state.imageUrl}
           description={this.state.description}          // close={this.state.view}
+
+        // close={this.state.view}
+
         />
 
 
