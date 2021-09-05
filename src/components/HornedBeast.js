@@ -20,35 +20,43 @@ class HornedBeast extends React.Component {
             vote: this.state.vote + 1
         })
 
+        this.props.update();
+        this.props.showData(this.props.title, this.props.imageUrl, this.props.description);
+
+
         
     }
 
-    largerRender= () => {
-        this.props.moreDetails();
 
     }
-
-
-
 
     render() {
 
         return (
             <>
                 <Col>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={this.props.imageUrl} onClick={this.votingProcess} />
+                    <Card style={{ width: '18rem' }}
+                    bg="dark"
+                    text="light"
+                    onClick={this.votingProcess}
+                    >
+                        <Card.Img variant="top" src={this.props.imageUrl} 
+                         />
                         <Card.Body>
                             <Card.Title>{this.props.title} </Card.Title>
                             <Card.Text>
                                <p> vote 💜 : {this.state.vote}</p> 
                                <p> {this.props.description} </p>
                             </Card.Text>
+
+                           
+
                             <Card.Text>
                                <p> horns 🦄 : {this.props.horns}</p> 
                                
                             </Card.Text>
                             <Button variant="primary" onClick={this.props.update}> Showing Details</Button>
+
                         </Card.Body>
                     </Card>
                 </Col>

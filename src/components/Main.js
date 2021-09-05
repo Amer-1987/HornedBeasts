@@ -75,6 +75,7 @@ class Main extends React.Component {
                                         
 
                                         update={this.props.update}
+                                        showData={this.props.showData}
 
                                     />
                                 
