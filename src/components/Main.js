@@ -24,6 +24,7 @@ class Main extends React.Component {
                                         imageUrl={item.image_url}
                                         description={item.description}
                                         update={this.props.update}
+                                        showData={this.props.showData}
 
                                     />
                                     {/* <SelectedBeast

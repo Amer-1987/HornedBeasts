@@ -16,16 +16,29 @@ class app extends React.Component {
     super(props);
     this.state = {
       view: false,
+      title:'',
+      imageUrl:'',
+      description:'',
     }
+  }
+
+  showData = (title,imageUrl,description)=>{
+    this.setState({
+      title:title,
+      imageUrl:imageUrl,
+      description:description,
+    })
 
 
   }
+
+
+
   update = () => {
     this.setState({
       view: true,
     })
 
-    
   }
 
   closing = () => {
@@ -41,13 +54,16 @@ class app extends React.Component {
         <Main
           data={data}
           update={this.update}
+          showData={this.showData}
         />
         <Footer />
 
         <SelectedBeast
           sendView={this.state.view}
           closing={this.closing}
-          // close={this.state.view}
+          title={this.state.title}
+          imageUrl={this.state.imageUrl}
+          description={this.state.description}          // close={this.state.view}
         />
 
 

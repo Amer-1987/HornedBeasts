@@ -10,16 +10,17 @@ class SelectedBeast extends React.Component {
     render() {
         return (
             <>
-                <Button variant="primary" >
-                    Launch demo modal
-                </Button>
+               
 
-                <Modal show={this.props.sendView}>
+                <Modal  show={this.props.sendView} onHide={this.props.closing}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>{this.props.title}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <p> ff= {this.props.description} </p>
+                        
+                        
+                       <img src= {this.props.imageUrl} alt={this.props.title} />
+                        <p>{this.props.description} </p>
                         </Modal.Body> 
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.props.closing} >
